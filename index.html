@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alumni Portal</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <img src="assets/logo.svg" alt="Alumni Portal" class="logo"/>
+        <div>
+            <h1>Alumni Portal - Needs Assessment & Development</h1>
+            <p>Connecting Alumni for Networking, Mentoring, and Career Opportunities</p>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#networking">Networking</a>
+        <a href="#mentoring">Mentoring</a>
+        <a href="#career">Career Updates</a>
+        <button class="auth-btn" onclick="openModal('login')">Login</button>
+        <button class="auth-btn" onclick="openModal('signup')">Signup</button>
+    </nav>
+
+    <div class="container">
+        <div class="section">
+            <h2>Project Description</h2>
+            <p>
+                The Alumni Portal connects graduates by providing a platform for professional networking, mentorship, and career-related updates.
+            </p>
+        </div>
+
+        <div class="section" id="networking">
+            <h2>Alumni Networking</h2>
+            <p>
+                Connect with batchmates, explore opportunities, and stay updated about events and reunions.
+            </p>
+        </div>
+
+        <div class="section" id="mentoring">
+            <h2>Mentoring</h2>
+            <p>
+                Alumni can guide students and fresh graduates to help them achieve their career goals.
+            </p>
+        </div>
+
+        <div class="section" id="career">
+            <h2>Career Updates</h2>
+            <p>
+                Get access to job openings, internships, and skill-building programs shared by alumni.
+            </p>
+        </div>
+    </div>
+
+    <!-- Login & Signup Modal -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <h2 id="modalTitle">Login</h2>
+            <form id="authForm" method="POST" action="auth.php" autocomplete="on">
+                <input type="hidden" id="formType" name="formType" value="login">
+                <input type="email" name="email" placeholder="Enter Email" required>
+                <input type="password" name="password" placeholder="Enter Password" minlength="6" required>
+                <button type="submit" id="submitBtn">Login</button>
+            </form>
+            <p id="toggleForm" class="linkish">Don't have an account? Signup</p>
+            <p class="close-btn" onclick="closeModal()">Close</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Alumni Portal | Designed for College Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
